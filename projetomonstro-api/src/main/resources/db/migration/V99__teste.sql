@@ -1,0 +1,5 @@
+--CREATE TABLE tb_medicoes () ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+--CREATE TABLE tb_historico () ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+--CREATE TABLE tb_usuario () ENGINE=InnoDB DEFAULT CHARSET=utf8;
