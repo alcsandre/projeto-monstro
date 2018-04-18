@@ -1,6 +1,7 @@
 CREATE TABLE tb_variacao (
-	id				INT NOT NULL AUTO_INCREMENT,
-	descricao		VARCHAR(50) NOT NULL
+	id				SMALLINT NOT NULL AUTO_INCREMENT,
+	descricao		VARCHAR(50) NOT NULL,
+	PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO tb_variacao (descricao) VALUES ('Barra H');

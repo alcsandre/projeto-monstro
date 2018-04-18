@@ -1,11 +1,11 @@
 CREATE TABLE tb_exercicio (
-	id 					INT NOT NULL AUTO_INCREMENT,
+	id 					BIGINT NOT NULL AUTO_INCREMENT,			
 	nome				VARCHAR(50) NOT NULL,
-	grupo_muscular		INT NOT NULL,
+	id_grupo_muscular	SMALLINT NOT NULL,
 	PRIMARY KEY(id),
-	FOREIGN KEY(grupo_muscular) REFERENCES tb_grupo_muscular(id)
+	FOREIGN KEY(id_grupo_muscular) REFERENCES tb_grupo_muscular(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO tb_exercicio (nome, grupo_muscular, variacao) VALUES ('SUPINO RETO', 1);
-INSERT INTO tb_exercicio (nome, grupo_muscular, variacao) VALUES ('CRUCIFIXO', 1);
-INSERT INTO tb_exercicio (nome, grupo_muscular, variacao) VALUES ('FLEXÃO DE BRAÇO', 1);
+INSERT INTO tb_exercicio (nome, id_grupo_muscular) VALUES ('SUPINO RETO', 4);
+INSERT INTO tb_exercicio (nome, id_grupo_muscular) VALUES ('CRUCIFIXO', 4);
+INSERT INTO tb_exercicio (nome, id_grupo_muscular) VALUES ('FLEXÃO DE BRAÇO', 4);

@@ -1,25 +1,31 @@
 package com.reaper.projetomonstro.api.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_grupo_muscular")
-public class GrupoMuscular {
-	
+@Table(name = "tb_treino")
+public class Treino {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Short id;
+	private Long id;
 	
 	private String nome;
 	
-	public Short getId() {
+	@OneToMany(mappedBy = "exercicio")
+	private List<ExercicioTreino> exercicioTreino;
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(Short id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -27,6 +33,12 @@ public class GrupoMuscular {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public List<ExercicioTreino> getExercicioTreino() {
+		return exercicioTreino;
+	}
+	public void setExercicioTreino(List<ExercicioTreino> exercicioTreino) {
+		this.exercicioTreino = exercicioTreino;
 	}
 	@Override
 	public int hashCode() {
@@ -43,7 +55,7 @@ public class GrupoMuscular {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		GrupoMuscular other = (GrupoMuscular) obj;
+		Treino other = (Treino) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
