@@ -6,7 +6,7 @@ CREATE TABLE tb_repeticoes_tempo (
 	PRIMARY KEY(id),
 	INDEX(id_exercicio_treino),
 	FOREIGN KEY(id_exercicio_treino) REFERENCES tb_exercicio_treino(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 INSERT INTO tb_repeticoes_tempo (id_exercicio_treino, qtd_repeticoes, tempo_exercicio) VALUES (1, NULL, '00:01:00');
 INSERT INTO tb_repeticoes_tempo (id_exercicio_treino, qtd_repeticoes, tempo_exercicio) VALUES (2, 15, NULL);

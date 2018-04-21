@@ -2,7 +2,7 @@ CREATE TABLE tb_grupo_muscular (
 	id 		SMALLINT NOT NULL AUTO_INCREMENT,
 	nome	VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 INSERT INTO tb_grupo_muscular (nome) VALUES ('BÍCEPS');
 INSERT INTO tb_grupo_muscular (nome) VALUES ('COSTAS');

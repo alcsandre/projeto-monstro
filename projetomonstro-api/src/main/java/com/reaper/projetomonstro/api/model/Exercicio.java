@@ -25,8 +25,8 @@ public class Exercicio {
 	@JoinColumn(name = "id_grupo_muscular")
 	private GrupoMuscular grupoMuscular;
 	
-	@OneToMany(mappedBy = "exercicio")
-	private List<ExercicioTreino> exercicioTreino;
+//	@OneToMany(mappedBy = "exercicio")
+//	private List<ExercicioTreino> exercicioTreino;
 	
 	public Long getId() {
 		return id;
@@ -46,12 +46,12 @@ public class Exercicio {
 	public void setGrupoMuscular(GrupoMuscular grupoMuscular) {
 		this.grupoMuscular = grupoMuscular;
 	}
-	public List<ExercicioTreino> getExercicioTreino() {
-		return exercicioTreino;
-	}
-	public void setExercicioTreino(List<ExercicioTreino> exercicioTreino) {
-		this.exercicioTreino = exercicioTreino;
-	}
+//	public List<ExercicioTreino> getExercicioTreino() {
+//		return exercicioTreino;
+//	}
+//	public void setExercicioTreino(List<ExercicioTreino> exercicioTreino) {
+//		this.exercicioTreino = exercicioTreino;
+//	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

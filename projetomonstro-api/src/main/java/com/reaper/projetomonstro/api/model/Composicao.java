@@ -9,27 +9,26 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name = "tb_treino")
-public class Treino {
-
+@Table(name = "tb_composicao")
+public class Composicao {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
 	
-	@OneToMany(mappedBy = "treino")
-	private List<ExercicioTreino> exercicioTreino;
-	
-	@JsonBackReference
-	@ManyToMany(mappedBy = "treinos")
-	private List<Composicao> composicoes;
+	@JsonManagedReference
+	@ManyToMany
+	@JoinTable(name = "tb_composicao_treino",
+		joinColumns = {@JoinColumn(name = "id_composicao")},
+		inverseJoinColumns = {@JoinColumn(name = "id_treino")})
+	private List<Treino> treinos;
 	
 	public Long getId() {
 		return id;
@@ -43,18 +42,11 @@ public class Treino {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public List<ExercicioTreino> getExercicioTreino() {
-		return exercicioTreino;
+	public List<Treino> getTreinos() {
+		return treinos;
 	}
-	public void setExercicioTreino(List<ExercicioTreino> exercicioTreino) {
-		this.exercicioTreino = exercicioTreino;
-	}
-
-	public List<Composicao> getComposicoes() {
-		return composicoes;
-	}
-	public void setComposicoes(List<Composicao> composicoes) {
-		this.composicoes = composicoes;
+	public void setTreinos(List<Treino> treinos) {
+		this.treinos = treinos;
 	}
 	@Override
 	public int hashCode() {
@@ -71,7 +63,7 @@ public class Treino {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Treino other = (Treino) obj;
+		Composicao other = (Composicao) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

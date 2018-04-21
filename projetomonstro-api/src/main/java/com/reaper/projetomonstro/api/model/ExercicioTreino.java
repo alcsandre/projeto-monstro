@@ -1,11 +1,14 @@
 package com.reaper.projetomonstro.api.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -30,6 +33,10 @@ public class ExercicioTreino {
 	
 	private Short qtdSeries;
 	
+	@OneToMany
+	@JoinColumn(name = "id_exercicio_treino")
+	private List<RepeticoesTempo> repeticoesTempo;
+	
 	public Long getId() {
 		return id;
 	}
@@ -53,6 +60,12 @@ public class ExercicioTreino {
 	}
 	public void setQtdSeries(Short qtdSeries) {
 		this.qtdSeries = qtdSeries;
+	}
+	public List<RepeticoesTempo> getRepeticoesTempo() {
+		return repeticoesTempo;
+	}
+	public void setRepeticoesTempo(List<RepeticoesTempo> repeticoesTempo) {
+		this.repeticoesTempo = repeticoesTempo;
 	}
 	@Override
 	public int hashCode() {

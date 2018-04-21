@@ -4,7 +4,7 @@ CREATE TABLE tb_exercicio (
 	id_grupo_muscular	SMALLINT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_grupo_muscular) REFERENCES tb_grupo_muscular(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 INSERT INTO tb_exercicio (nome, id_grupo_muscular) VALUES ('SUPINO RETO', 4);
 INSERT INTO tb_exercicio (nome, id_grupo_muscular) VALUES ('CRUCIFIXO', 4);
